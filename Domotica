@@ -7,7 +7,7 @@ SoftwareSerial ESP8266(10, 11);
   Pin 13: Led
 */
 
-// Variables para el multi-hilos
+// Variables para el "multi-hilos"
 unsigned long anteriorDiagnostico = 0, actualDiagnostico = 0, intervaloDiagnostico = 900000; // 900000 - 15 minutos
 
 // Variables global para almacenar las respuestas del ESP8266
@@ -326,6 +326,7 @@ bool realizarDiagnostico()
 
 void iniciarSalidas()
 {
+// Pines de los relés
   for (int i = 22; i <= 29; ++i)
     {
       pinMode(i, OUTPUT);
@@ -333,11 +334,14 @@ void iniciarSalidas()
       delay(50);
       digitalWrite(i, HIGH);
     }
+  
+  // Pin para alertas
   pinMode(53, OUTPUT);
   digitalWrite(53, HIGH);
   delay(250);
   digitalWrite(53, LOW);
   
+  // Solo dios sabe para sirve este pin; Esta sin usar en el arduino.
   pinMode(13, OUTPUT);
   digitalWrite(13, LOW);
 }
