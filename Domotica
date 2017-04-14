@@ -4,7 +4,7 @@ SoftwareSerial ESP8266(10, 11);
 /*
   Pin 2: RX
   Pin 3: TX
-  Pin 13: Led
+  Pin 53: Led alert
 */
 
 // Variables para el "multi-hilos"
