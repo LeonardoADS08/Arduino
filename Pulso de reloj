@@ -1,0 +1,14 @@
+bool clk = false;
+int clkPin = 5; // Pin de salida
+int clkPulse = 500; // ms. por estado (1 o 0) || 500ms. => 1 seg. por periodo.
+
+void setup() {
+  pinMode(clkPin, OUTPUT);
+}
+
+void loop() {
+  clk = !clk;
+  if (clk) digitalWrite(clkPin, HIGH);
+  else digitalWrite(clkPin, LOW);
+  delay(clkPulse);
+}
